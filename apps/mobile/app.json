@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Dhuttu",
+    "slug": "dhuttu",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "dhuttu",
+    "plugins": [
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow Dhuttu to hear your spend notes.",
+          "speechRecognitionPermission": "Allow Dhuttu to turn speech into spends."
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mubasil.dhuttu",
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Turn spoken spends into ledger entries.",
+        "NSMicrophoneUsageDescription": "Capture voice spends."
+      }
+    },
+    "android": {
+      "package": "com.mubasil.dhuttu",
+      "adaptiveIcon": {
+        "backgroundColor": "#090909",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": ["RECORD_AUDIO"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "replace-with-eas-project-id"
+      }
+    }
+  }
+}

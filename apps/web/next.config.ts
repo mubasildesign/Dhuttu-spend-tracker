@@ -1,17 +1,9 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
   transpilePackages: ["@spend-tracker/shared"],
-  turbopack: {
-    root: path.join(__dirname, "../.."),
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
+  // Avoid turbopack.root=monorepo on Vercel — it hangs scanning the workspace.
+  // CSS via PostCSS (@tailwindcss/postcss) so webpack builds work in CI.
 };
 
 export default nextConfig;

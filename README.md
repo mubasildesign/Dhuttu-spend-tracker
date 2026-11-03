@@ -113,9 +113,12 @@ Keep `.env.local` out of git (already ignored).
 ### 2. Vercel
 
 1. Import the repo at [vercel.com](https://vercel.com)  
-2. **Root Directory:** `apps/web`  
-3. Add env: at least `GEMINI_API_KEY`  
-4. Deploy → you get `https://….vercel.app`
+2. **Root Directory:** `apps/web` (required — monorepo)  
+3. Install/build are set in `apps/web/vercel.json` (installs from repo root for workspaces)  
+4. Add env: at least `GEMINI_API_KEY` (Firebase optional — demo works without it)  
+5. Deploy → open the **Production** domain (`dhuttu.vercel.app` or your custom domain)
+
+**If you see 404 / Vercel login wall:** Project → **Settings → Deployment Protection** → turn **Vercel Authentication** **Off** (or Standard Protection only for Preview). Team projects often block public preview URLs until you do this.
 
 ### 3. Firebase (when ready)
 
